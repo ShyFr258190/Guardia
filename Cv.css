@@ -24,6 +24,20 @@ body {
     line-height: 1.6;
 }
 
+/* =====Image==== */
+img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+
 /* ===== TITRES ===== */
 h1, h2, h3 {
     color: var(--primary-color);
