@@ -1,43 +1,198 @@
 <html lang="fr">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CV</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Franck Journoud</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Kaushan+Script&display=swap"
+        rel="stylesheet">
+    <!-- Le lien vers le fichier CSS -->
+    <link rel="stylesheet" href="Cv.css">
 </head>
+
 <body>
 
-  <header>
-    <h1 class="titre-animé">Emilie</h1>
-    <nav>
-      <ul>
-        <li><a href="#accueil">Accueil</a></li>
-        <li><a href="#apropos">À propos</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+    <!-- ===== ÉCRAN DE BOOT (AJOUTÉ) ===== -->
+    <div class="boot-screen">
+        <!-- L'élément <pre> respecte les sauts de ligne et espaces -->
+        <pre class="boot-text" id="boot-text"></pre>
+    </div>
 
-  <section id="accueil" class="section">
-    <h2>Accueil</h2>
-    <p>Découvrez un site élégant avec de belles animations en CSS.</p>
-    <a href="#apropos" class="btn">En savoir plus</a>
-  </section>
 
-  <section id="apropos" class="section">
-    <h2>À propos</h2>
-    <p>Ce site est un exemple de mise en page simple et animée.  
-    Il utilise uniquement HTML et CSS, sans JavaScript.</p>
-  </section>
+    <!-- ===== HEADER ===== -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">BAI EMILIE</div>
 
-  <section id="contact" class="section">
-    <h2>Contact</h2>
-    <p>Envoyez-moi un message à <a href="mailto:exemple@mail.com">exemple@mail.com</a></p>
-  </section>
+            <!-- Bouton burger -->
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
 
-  <footer>
-    <p>© 2025 Mon Site Animé - Tous droits réservés</p>
-  </footer>
+            <!-- Menu déroulant -->
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#formation">Formation</a></li>
+                <li><a href="#infos">Informations diverses</a></li>
+                <li><a href="#coordonnees">Contact</a></li>
+            </ul>
+        </nav>
+        <!-- Fond overlay pour fermer le menu -->
+        <div id="menu-overlay"></div>
+    </header>
 
+    <!-- ===== CONTENU PRINCIPAL (MAIN AJOUTÉ) ===== -->
+    <main>
+        <!-- ===== SECTION PRÉSENTATION ===== -->
+        <section id="presentation" class="presentation">
+            <div class="intro">
+                <h1>BAI EMILIE</h1>
+                <h2>Recheche: Stage entre MAI et AOUT 2026</h2>
+                <p>
+                    <strong>Bachelor Développeur Informatique</strong>, option <strong>Cybersécurité</strong>,
+                    je recherche un <strong>stage de mai à août 2026</strong>. <br>
+                    Je m'implique
+                </p>
+            </div>
+        </section>
+
+        <!-- ===== SECTION FORMATION ===== -->
+        <section id="formation" class="formation">
+            <h2>Formation</h2>
+            <div class="grid">
+                <div class="card">
+                    <h2>Guardia Cybersecurity School</h2>
+                    <h3>Paris, France — Depuis Septembre 2025 </h3>
+                    <p>Bachelor Développeur Informatique — Option Cybersécurité (1ère année)</p>
+                </div>
+                <div class="card">
+                    <h2>Lycée Henri Brisson</h2>
+                    <h3>Vierzon, Centre-val-de-loire — 2023 - 2025</h3>
+                    <p>Baccalauréat Technologique STI2D, spécialité Systèmes d’Information et Numérique (SIN)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION INFORMATIONS ===== -->
+        <section id="infos" class="langues">
+            <h2>Informations Diverses</h2>
+            <div class="content">
+                <div class="texte">
+                    <h3>Langues</h3>
+                    <ul>
+                        <li><strong>Français :</strong> Langue maternelle</li>
+                        <li><strong>Chinois :</strong> Langue maternelle</li>
+                        <li><strong>Anglais :</strong> Niveau A2</li>
+                    </ul>
+
+                    <h3>Centres d’intérêt</h3>
+                    <ul>
+                        <li>Musique</li>
+                        <li>Jeux Vidéo</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION CONTACT ===== -->
+        <section id="coordonnees" class="coordonnees">
+            <h2>Me Contacter</h2>
+            <form action="mail to:Emilieb.mailpro@gmail.com" method="POST" enctype="text/plain">
+                <input type="text" name="name" placeholder="Votre nom" required>
+                <input type="email" name="email" placeholder="Votre email" required>
+                <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
+    </main>
+    <!-- ===== FIN DU MAIN ===== -->
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>&copy; 2025 BAI EMILIE — Tous droits réservés.</p>
+    </footer>
+
+    <!-- ===== SCRIPT CORRIGÉ ===== -->
+    <script>
+        // --- PARTIE MENU BURGER (INCHANGÉE) ---
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        const overlay = document.getElementById('menu-overlay');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('show');
+            overlay.classList.toggle('show');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('show');
+                overlay.classList.remove('show');
+            });
+        });
+
+        overlay.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            navLinks.classList.remove('show');
+            overlay.classList.remove('show');
+        });
+
+        // --- PARTIE ANIMATION DE BOOT (REFAITE) ---
+        document.addEventListener("DOMContentLoaded", () => {
+            const bootTextElement = document.getElementById("boot-text");
+            const bootScreen = document.querySelector(".boot-screen");
+            const body = document.body;
+
+            // Failsafe au cas où les éléments ne seraient pas trouvés
+            if (!bootTextElement || !bootScreen) {
+                console.error("Éléments du boot screen non trouvés !");
+                document.body.classList.add("loaded"); // On affiche le site directement
+                return;
+            }
+
+            let lineIndex = 0;
+            let charIndex = 0;
+
+            function typeChar() {
+                // Si on a fini d'écrire toutes les lignes
+                if (lineIndex >= lines.length) {
+                    // On attend 1s avant de lancer le fade-out
+                    setTimeout(() => {
+                        bootScreen.classList.add("fade-out");
+                        body.classList.add("loaded"); // Déclenche l'animation d'apparition du site
+
+                        // On supprime l'écran de boot du DOM après la transition
+                        setTimeout(() => {
+                            bootScreen.remove();
+                        }, 1000); // 1s (durée du .fade-out)
+                    }, 1000); // 1s d'attente après "BOOT COMPLETE"
+                    return; // On arrête la fonction
+                }
+
+                // Ajoute un caractère de la ligne actuelle
+                bootTextElement.textContent += lines[lineIndex][charIndex];
+                charIndex++;
+
+                // Si on est à la fin de la ligne
+                if (charIndex >= lines[lineIndex].length) {
+                    bootTextElement.textContent += "\n"; // Saut de ligne
+                    charIndex = 0; // Reset l'index du caractère
+                    lineIndex++; // Passe à la ligne suivante
+                    // Pause plus longue entre les lignes
+                    setTimeout(typeChar, 800);
+                } else {
+                    // Vitesse de frappe
+                    setTimeout(typeChar, 50); // 50ms entre chaque caractère
+                }
+            }
+
+            // Lancer l'animation
+            typeChar();
+        });
+    </script>
 </body>
 </html>
